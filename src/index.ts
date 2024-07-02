@@ -12,9 +12,6 @@ const port = process.env.PORT || 3000;
 const ipinfoToken = process.env.IPINFO_TOKEN;
 const weatherApiKey = process.env.WEATHER_API_KEY;
 
-console.log('IPINFO_TOKEN:', ipinfoToken);
-console.log('WEATHER_API_KEY:', weatherApiKey);
-
 app.get('/api/hello', async (req: Request, res: Response) => {
   const visitorName = (req.query.visitor_name as string) || 'Mark';
   let clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
